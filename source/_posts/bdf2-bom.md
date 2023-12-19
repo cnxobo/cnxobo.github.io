@@ -1,0 +1,223 @@
+---
+title: BDF2’s dependencyManagement
+tags:
+  - bdf2
+  - maven
+id: '932'
+categories:
+  - - dorado
+  - - Java
+comments: false
+date: 2021-12-23 20:34:11
+---
+
+#### BDF2's dependencyManagement
+
+根据自己需要自行删改项目
+
+```markup
+    <properties>
+        <spring.version>3.2.5.RELEASE</spring.version>
+        <bdf2.version>2.0.7</bdf2.version>
+        <bdf2.swfviewer.version>2.0.6-SNAPSHOT</bdf2.swfviewer.version>
+        <bdf2.webservice.version>2.0.3-SNAPSHOT</bdf2.webservice.version>
+        <dorado.core.version>7.5.0</dorado.core.version>
+        <dorado.uploader.version>1.0.19</dorado.uploader.version>
+        <dorado.hibernate.version>1.2.2</dorado.hibernate.version>
+        <commons-beanutils.version>1.9.3</commons-beanutils.version>
+        <commons-collections.version>3.2.2</commons-collections.version>
+        <commons-codec.version>1.10</commons-codec.version>
+        <commons-dbcp.version>1.4</commons-dbcp.version>
+        <commons-dbcp2.version>2.1.1</commons-dbcp2.version>
+        <commons-digester.version>2.1</commons-digester.version>
+        <commons-pool.version>1.6</commons-pool.version>
+        <commons-pool2.version>2.4.3</commons-pool2.version>
+        <commons-lang3.version>3.3.2</commons-lang3.version>
+        <fasterxml.jackson.version>2.7.3</fasterxml.jackson.version>
+        <poi.version>3.11</poi.version>
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <artifactId>spring-core</artifactId>
+                <groupId>org.springframework</groupId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>spring-beans</artifactId>
+                <groupId>org.springframework</groupId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>spring-context</artifactId>
+                <groupId>org.springframework</groupId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>spring-context-support</artifactId>
+                <groupId>org.springframework</groupId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>spring-expression</artifactId>
+                <groupId>org.springframework</groupId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>spring-web</artifactId>
+                <groupId>org.springframework</groupId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>spring-webmvc</artifactId>
+                <groupId>org.springframework</groupId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jms</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>com.bstek.dorado</groupId>
+                <artifactId>dorado-core</artifactId>
+                <version>${dorado.core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.bstek.dorado</groupId>
+                <artifactId>dorado-hibernate</artifactId>
+                <version>${dorado.hibernate.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.bstek.dorado</groupId>
+                <artifactId>dorado-uploader</artifactId>
+                <version>${dorado.uploader.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.bstek.bdf2</groupId>
+                <artifactId>bdf2-orm-hibernate3</artifactId>
+                <version>${bdf2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.bstek.bdf2</groupId>
+                <artifactId>bdf2-core</artifactId>
+                <version>${bdf2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.bstek.bdf2</groupId>
+                <artifactId>bdf2-swfviewer</artifactId>
+                <version>${bdf2.swfviewer.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.bstek.bdf2</groupId>
+                <artifactId>bdf2-webservice</artifactId>
+                <version>${bdf2.webservice.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-beanutils</groupId>
+                <artifactId>commons-beanutils</artifactId>
+                <version>${commons-beanutils.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>commons-collections</groupId>
+                <artifactId>commons-collections</artifactId>
+                <version>${commons-collections.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>${commons-codec.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-dbcp</groupId>
+                <artifactId>commons-dbcp</artifactId>
+                <version>${commons-dbcp.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-digester</groupId>
+                <artifactId>commons-digester</artifactId>
+                <version>${commons-digester.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>commons-pool</groupId>
+                <artifactId>commons-pool</artifactId>
+                <version>${commons-pool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+
+            <!-- fasterxml.jackson -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${fasterxml.jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${fasterxml.jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${fasterxml.jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.dataformat</groupId>
+                <artifactId>jackson-dataformat-xml</artifactId>
+                <version>${fasterxml.jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.dataformat</groupId>
+                <artifactId>jackson-dataformat-smile</artifactId>
+                <version>${fasterxml.jackson.version}</version>
+            </dependency>
+
+            <!-- poi -->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-scratchpad</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-examples</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+```
