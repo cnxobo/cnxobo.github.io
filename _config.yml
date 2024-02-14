@@ -104,9 +104,3 @@ deploy:
   type: 'git'
   repo: https://github.com/cnxobo/cnxobo.github.io
   branch: master
-
-
-menu:
-  Home: /
-  Categories: /categories
-  Tags: /tags

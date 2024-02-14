@@ -61,11 +61,20 @@ scope 值有 compile、provided、runtime、system、test、import。默认为co
     <artifactId>myartifact</artifactId>
     <version>1.0.0</version>
     <scope>system</scope>
-    <systemPath>${project.basedir}/lib/myartifact_1.0.0.jar</systemPath>
+    <systemPath>${pom.basedir}/lib/myartifact_1.0.0.jar</systemPath>
 </dependency>
 ```
-
-> project.basedir 表示项目根目录,即包含pom.xml文件的目录。 还有一个更老的写法basedir 已经被标记为弃用了。
+同时需要配置`includeSystemScope`属性
+```XML
+<plugin>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-maven-plugin</artifactId>
+  <configuration>
+    <includeSystemScope>true</includeSystemScope>
+  </configuration>
+</plugin>
+```
+> pom.basedir表示项目根目录,即包含pom.xml文件的目录。 还有一个更老的写法basedir、project.basedir 已经被标记为弃用了。
 
 Maven Model Builder – Introduction https://maven.apache.org/ref/3-LATEST/maven-model-builder/index.html
 
