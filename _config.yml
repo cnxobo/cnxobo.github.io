@@ -104,3 +104,5 @@ deploy:
   type: 'git'
   repo: https://github.com/cnxobo/cnxobo.github.io
   branch: master
+  
+baiduTrackId: faa8e766524229b44244efaf66c29a2c
