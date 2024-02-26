@@ -127,7 +127,7 @@ view.get("#autoFormContractMain.#amount.editor").bind("onKeyPress", function(sel
 #### Q: 重新加载数据后，dataGrid 启用 client filter 时，dataGrid 数据为什么不更新？
 
 **A:** 这个可以确认为 dorado7 的 Bug, 目前通过以下代码手动刷新 dataGrid。
-
+```JavaScript
 function resetFilteredDataGrid(dataGrid){
     var filterEntity = dataGrid.get("filterEntity");
     var lastCriteria = filterEntity.toJSON();
@@ -138,7 +138,7 @@ function resetFilteredDataGrid(dataGrid){
         dataGrid.filter();
         }, 100);
 } 
-
+```
 #### Q: DataGrid 如何设置某些数据不能选中
 
 在 RowSelectorColumn 的 onRenderCell 事件里，修改默认渲染动作。
@@ -160,7 +160,7 @@ if (selectable()) {
 
 _A:_ 可以在 DataColumn 的 onRenderCell 事件里重写渲染方法。
 
-```
+```JavaScript
     jQuery(arg.dom).empty().xCreate({
         tagName: "button",
         content: "查看",
@@ -214,14 +214,24 @@ xobo.renderClickLink = function(arg, content, callback, config){
 
 A: 在web.xml中配置编解码Filter(org.springframework.web.filter.CharacterEncodingFilter). 一定要做为第一个 fitler才行。
 
- encodingFilter
-    org.springframework.web.filter.CharacterEncodingFilter
-    encoding
-        UTF-8 
-    forceEncoding
-        true 
- encodingFilter
-    /\* 
+```XML
+<filter>
+    <filter-name>encodingFilter</filter-name>
+    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+    <init-param>
+        <param-name>encoding</param-name>
+        <param-value>UTF-8</param-value>
+    </init-param>
+    <init-param>
+        <param-name>forceEncoding</param-name>
+        <param-value>true</param-value>
+    </init-param>
+</filter>
+<filter-mapping>
+    <filter-name>encodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+</filter-mapping>
+```
 
 #### Q: 为什么通过DownloadAction 传递到后台的参数都变成 String ？
 
@@ -270,7 +280,7 @@ setTimeout(function(){
 #### Q: 如何把日期选择器的默认日期改为输入框的值？
 
 **A:** dorado 的日期选择框默认打开的时候都是当前时间。创建一个新的DateDropDown控件，然后在其 onCreate 事件中插入如下代码:
-
+```JavaScript
 self.initDropDownBox = function(box, editor){
     var dropDown = this, datePicker = dropDown.get("box.control");
     if (datePicker) {
@@ -286,7 +296,7 @@ self.initDropDownBox = function(box, editor){
         datePicker.set("date", date);
     }
 };
-
+```
 ## 杂项
 
 ### dorado滚动条
@@ -302,7 +312,7 @@ dorado.Setting\["widget.scrollerExpandedSize"\]=10;
 
 1.  使用 window.location.href = "downloadUrl";
 2.  通过 iframe.
-
+```JavaScript
 function downloadFile(url){
     var iframeId = "iframeDownloadFile";
     var iframe = document.getElementById(iframeId);
@@ -314,9 +324,9 @@ function downloadFile(url){
     }
     iframe.src = url;
 }
-
+```
 #### 文件下载Java端代码片段
-
+```Java
   public void download(String filename, InputStream inputStream, HttpServletResponse response)
       throws IOException {
     response.setContentType("application/octet-stream");
@@ -335,11 +345,11 @@ function downloadFile(url){
       IOUtils.closeQuietly(outputStream);
     }
   }
-
+```
 ### 父子页面交互
 
 在一些业务场景下，我们会需要在子页面来操作父页面的元素，或者反过来。  
-
+```JavaScript
 // sub page
 top.doSth = function(params){
     //do what you want
@@ -349,7 +359,7 @@ top.doSth = function(params){
 if (jQuery.isFunction(top.doSth)){
     top.doSth(datas);
 }
-
+```
 ## 性能
 
 #### Q: 在前台大批量操作数据，页面很卡怎么办?
