@@ -58,4 +58,4 @@ googleTrackId:
 baiduTrackId: faa8e766524229b44244efaf66c29a2c
 
 # whether to show read more button when showing article in excerpt in main page
-read_more_btn: false
+read_more_btn: true
