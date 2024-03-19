@@ -8,7 +8,7 @@ date: 2024-02-28
 
 正常用了好久的 git 项目突然 pull 命令不好使了，提示如下。这是是因为 git 在 2.27 版本后新增了一个显示的配置式，选择 git 的默认提交合并。
 
-<!--more-->
+<!-- more -->
 
 > Pulling without specifying how to reconcile divergent branches is discouraged. You can squelch this message by running one of the following commands sometime before your next pull:
 >
