@@ -14,7 +14,12 @@ date: 2017-05-08 14:06:02
 
 # 相关网站
 
-**dorado nexus 私服** [http://nexus.bsdn.org](http://nexus.bsdn.org "dorado nexus 私服" target="_blank") **dorado client api** [http://dorado7.bsdn.org/jsdoc/](http://dorado7.bsdn.org/jsdoc/ "dorado client api" target="_blank") **wiki** [http://wiki.bsdn.org/](http://wiki.bsdn.org/ "wiki" target="_blank") **BDF2项目创建向导** [http://bsdn.org/projects/bdf/deploy/bdf2-new-project-wizard/view.Wizard.d](http://bsdn.org/projects/bdf/deploy/bdf2-new-project-wizard/view.Wizard.d "BDF2项目创建向导" target="_blank") **dorado eclipse plugin** 百度网盘: [https://pan.baidu.com/s/1chalW5ebFOC3cKkYJLvkig](https://pan.baidu.com/s/1chalW5ebFOC3cKkYJLvkig  "百度网盘" target="_blank") 提取码:xobo
+**dorado nexus 私服** [http://nexus.bsdn.org](http://nexus.bsdn.org "dorado nexus 私服" target="_blank") 
+**dorado client api** [http://dorado7.bsdn.org/jsdoc/](http://dorado7.bsdn.org/jsdoc/ "dorado client api" target="_blank") 
+**wiki** [http://wiki.bsdn.org/](http://wiki.bsdn.org/ "wiki" target="_blank") 
+**BDF2项目创建向导** [http://bsdn.org/projects/bdf/deploy/bdf2-new-project-wizard/view.Wizard.d](http://bsdn.org/projects/bdf/deploy/bdf2-new-project-wizard/view.Wizard.d "BDF2项目创建向导" target="_blank") 
+**dorado eclipse plugin** 
+百度网盘: [https://pan.baidu.com/s/1chalW5ebFOC3cKkYJLvkig](https://pan.baidu.com/s/1chalW5ebFOC3cKkYJLvkig  "百度网盘" target="_blank") 提取码:xobo
 
 # Dorado
 
@@ -402,3 +407,12 @@ window.openUrlInFrameTab(url, name, icon);
 // example
 window.openUrlInFrameTab("Test.d", "测试页面", "");
 ```
+
+### eclipse
+#### xsd
+因为各种原因， xsd 文件加载缓慢或者网站升级文件会找不到，导致xml文件校验慢甚至失败。可以在eclipse指定xsd。
+
+![[image-20240408142608724.png]]
+
+
+[bdf2.0.xsd下载](bdf2.0.xsd)
