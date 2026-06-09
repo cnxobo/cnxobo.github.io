@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(while read:*)",
+      "Bash(do echo:*)",
+      "Read(//d/repo/cnxoboblog/source/_posts/ops/**)",
+      "Bash(done)",
+      "Bash(cd:*)"
+    ]
+  }
+}
